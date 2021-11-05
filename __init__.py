@@ -1,4 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 app = Flask(__name__)
 @app.route('/hello', methods=['GET', 'POST'])
@@ -23,5 +25,5 @@ def v_app():
 
    return result_string, 405
 
-
    return app
+

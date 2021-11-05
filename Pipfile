@@ -5,9 +5,8 @@ name = "pypi"
 
 [packages]
 flask = "*"
-requests = "*"
-urllib3 = "*"
-pandas = "*"
+python-dotenv = "*"
+gunicorn = "*"
 
 [dev-packages]
 

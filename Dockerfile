@@ -10,6 +10,6 @@ RUN pipenv lock
 RUN PIP_USER=1 PIP_IGNORE_INSTALLED=1 pipenv install -d --system --ignore-pipfile
 
 COPY . /app/mycloudkite
-WORKDIR /app/mycloudkite
+WORKDIR /app
 EXPOSE 8080
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["gunicorn", "-b 0.0.0.0:8080", "mycloudkite:app"]
